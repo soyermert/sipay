@@ -1,0 +1,509 @@
+{
+	"info": {
+		"_postman_id": "0992540a-805f-4e04-b531-76577fa3db83",
+		"name": "CCPAYMENT API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n \t\"app_id\":\"d02c04d12fe704fba514a84018c3567e\",\n \t\"app_secret\":\"3ea385a201ac29c403a55f4bf981f843\"\n } "
+				},
+				"url": {
+					"raw": "https://app.sipay.com.tr/ccpayment/api/token",
+					"protocol": "https",
+					"host": [
+						"app",
+						"sipay",
+						"com",
+						"tr"
+					],
+					"path": [
+						"ccpayment",
+						"api",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPos API",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjU5MDJjY2I5NTk1ZjU2OTczNmYwZjAyZTcwNWZiM2Y4YzM4NDExMThkZGY1NWJlMzlkYjZjMjU1N2Q5NzhlYzBiNTNkYWFlNWYwYzNlZTAxIn0.eyJhdWQiOiI5IiwianRpIjoiNTkwMmNjYjk1OTVmNTY5NzM2ZjBmMDJlNzA1ZmIzZjhjMzg0MTExOGRkZjU1YmUzOWRiNmMyNTU3ZDk3OGVjMGI1M2RhYWU1ZjBjM2VlMDEiLCJpYXQiOjE2MDk5NDQ0NTgsIm5iZiI6MTYwOTk0NDQ1OCwiZXhwIjoxNjA5OTUxNjU4LCJzdWIiOiI3OCIsInNjb3BlcyI6W119.TtQn2xGPCwaro9DCVjweUfA4Grl3ONz-f9LFoub9MzLqvkjdahqISsgM_aAHqxg2S59L-chGBEJAHfpndQvpl_VTTw3KWy4Xy7yTloEH9mPZBaLbvD3opa2hPdJ5FRHhgl4YhOZ-266Pkh5P2VxuLSMJhUsbC-SRgqCf9gi_gktLFCjA15JGJg4lPAJ_W1rZNgRPINit6Xm5rC3iig3WGDxDZRMtoaYGYcntkF1brKZyrSY5o8bms8SFd09UgLDrcNHJQuikdGYs43Ul-_zbWEzpTSVVTlfbuUMvfjDGAO4J9Rp2O2ys7CdQ1mh2_Rzq1Uw8XlELYwbkBAhfmo1bIg7uhOUCKuSAHN0d29whB1Kc-GeCyGlZNpgg6D4wdwP0FmRZyga71n49UGwXpvaAb6G-Or2F0zOKOwxi-Up8369MsXm3SjkPPYRtKEqgy_Gyxpfipc5xnJmeMSWr7t3ZTWDul8NyVBg42OzTpxKDYXYBmfeE4nwpBGoK_UpBXXD75EytINiYwblPe3vqfgmVqP1yZb_jjg3Zcfz70eg319QQkBIuRkMYGqChWED4pnw7jm9VDpcNbgdPL5cH5bfxlUUeoa0AXEYM1P3SyNXkyjlLxb2B1k2yH6oDbuwNNe_qFBeOb6rhUY8d4HQatrHM-D5hVPs_8T12rjFrXAD-Chs"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"credit_card\":\"534261\",\r\n\t\"amount\":\"248.00\",\r\n\t\"currency_code\":\"TRY\",\r\n\t\"merchant_key\":\"$2y$10$F/fN/bqPgpah57ghAKhRUuvJg0XRd02vRZtoQMnDF8HpwNSI5pfHO\",\r\n    \"is_2d\" : 0\r\n}"
+				},
+				"url": {
+					"raw": "https://app.sipay.com.tr/ccpayment/api/getpos",
+					"protocol": "https",
+					"host": [
+						"app",
+						"sipay",
+						"com",
+						"tr"
+					],
+					"path": [
+						"ccpayment",
+						"api",
+						"getpos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order Status API",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjY2ZDcwMmU0MzViOWRhN2Q0Y2I4MmNlNmRiYWYzZGQ0N2I3ZjQ1NmVjZTRjZTk3ZDc5OThlZmNlMjBkYWMzNzZkZTBkNWZkN2ZkYjc2OWU0In0.eyJhdWQiOiI5IiwianRpIjoiNjZkNzAyZTQzNWI5ZGE3ZDRjYjgyY2U2ZGJhZjNkZDQ3YjdmNDU2ZWNlNGNlOTdkNzk5OGVmY2UyMGRhYzM3NmRlMGQ1ZmQ3ZmRiNzY5ZTQiLCJpYXQiOjE1OTQ3MDY2NjksIm5iZiI6MTU5NDcwNjY2OSwiZXhwIjoxNTk0NzEzODY5LCJzdWIiOiI2Iiwic2NvcGVzIjpbXX0.rWsjmEEnQEyFEcVSrBMs80JAUi3QYyV75TW5imcgc_7H-hJCXCU_dkqvQuv04_Y30lQ3iIirbKRQVl-xfBtQma-2H4mqh9wjuEdqbZ7PSCg1EyVPUup2jwW2y80OxbFGScThqFNvqTcMC_FoWkBndFsHZcNs8k77W5gQq0vpQCPor5_mfl-YBQsiinZHsOUSmazTjgVdDS7Ka2mbtdPPmi2qQR5LFFKPv6sJL8mz9mZRePsv5Az0qFo0DLMn503dKMDM2t5BWsLj2mDSJM_Nt73g-oT3znr1wSKfduHu47rbhc_qqYd2b0jgEF6_mS8C0V9Bk8h5xwO5T-JaZH7dcyO3-7ivdFLL-IZo2A49yDEyhEm3cUSW6nMi47ZxelyVTBeJ1r3YJv6jwkpwpmG8bWaoP7NgnRcN3PS5On5VQSzdxwBP9RMZVCFFbZprgrYRwgmsEMJ37o9qK1YqO2Plk_iTJGgLAAoWaayEsankiDozFt_xFKuY9BuDkDJNsSPExwoy5nHDejmgZ0JsZ_EbX6qSwEgZ9pXrgytvDVAtAlLi1f2Ady-3yhq0nfr7qjlC_65pd_T388WFhCrOeccNlpKZQxOF8tBsNl220LJJuMZVYGhVlWSWTQ3IAkICzGdJ0V04XRpOlVTAXDSKCC28AoK-G_WmfzHXwUvQy6VTOLg",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"merchant_key\":\"$2y$10$w/ODdbTmfubcbUCUq/ia3OoJFMUmkM1UVNBiIQIuLfUlPmaLUT1he\",\n\t\"invoice_id\" : \"94846\",\n    \"include_pending_status\": \"true\"\n}"
+				},
+				"url": {
+					"raw": "https://provisioning.sipay.com.tr/ccpayment/api/checkstatus",
+					"protocol": "https",
+					"host": [
+						"provisioning",
+						"sipay",
+						"com",
+						"tr"
+					],
+					"path": [
+						"ccpayment",
+						"api",
+						"checkstatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refund API",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjZjM2ExNzUxMTIxMDdmZWY5MGE2ZjZmMDMzNTkwNDMyOTA4MThkNDFlYThiOGUzMzk0YzhjOGUzZjEzMjk3ZGEwODc4MTlkZWQwYTU5Nzk4In0.eyJhdWQiOiIxMSIsImp0aSI6IjZjM2ExNzUxMTIxMDdmZWY5MGE2ZjZmMDMzNTkwNDMyOTA4MThkNDFlYThiOGUzMzk0YzhjOGUzZjEzMjk3ZGEwODc4MTlkZWQwYTU5Nzk4IiwiaWF0IjoxNjA1MTYxNDY2LCJuYmYiOjE2MDUxNjE0NjYsImV4cCI6MTYwNTE2ODY2NSwic3ViIjoiNiIsInNjb3BlcyI6W119.OMUdeAPmjQsBtPnCEuII__MriHqJx3vBAKH29Q1yXnSKwRl9ruSw17XE-gGN3FdQsdtG91nt0dWf9wQYxXCmTKKHC7ugWp3tZeeHyfITUyfOOE0HWPb1txoKS7tRg_DUGaYmPin-zNdYQWP-emv6ncBO0Nw0ZwrRAJFA-u4OXh3qXSiexvoNEOiasvmXxt0n0n4LBrO7sSYn_QHDns9_8RAnccmP1KPErb10GcG79aBRDrYgiD0WNp9GWjHCNesoL9ZqBnaC4A8OtxLjCAcTyh7QFhpqpUdfqENmMEeS2JTKIw0Z_W1pL8vNvnaj1C7LQiCrnZNEW8iapojhGE8WBVso_gmtoFMuOe_ykJS8XtxRv0syWOzjhfWB1mDIxhA82Zp_apAuleF-_8A7nmp9JCzQIdOJT1cT9C6OXdX-g4PLw8e2uml9ueaZdDDH9lyrPqBcfIIOTdX27WJ6p-qsoyKz2bKiULop2eF3GGzbicY8pgZZHGNr3f8M0bjNw8nLdjg5KGC4mKF_oiphjNiC6Cs4kzrlKSwhyuRV9Yv_nxyA9MSh5_nEyGLYo5TIzxMf3EMR-h8J6fQbH2XL4oIvkCpR0nycFLzbPG3RJwLTbhUp30Dr5OsNVD3X2izbvNCQF6q-TITKMy5sZYH4QKn-JyDgwSR5ZIcMeiyGwQRoQGA",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"invoice_id\":\"9737\",\r\n\"merchant_key\":\"$2y$10$w/ODdbTmfubcbUCUq/ia3OoJFMUmkM1UVNBiIQIuLfUlPmaLUT1he\",\r\n\"amount\": \"0.5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://provisioning.sipay.com.tr/ccpayment/api/refund",
+					"protocol": "https",
+					"host": [
+						"provisioning",
+						"sipay",
+						"com",
+						"tr"
+					],
+					"path": [
+						"ccpayment",
+						"api",
+						"refund"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recurring Query",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjkyNTdkNzQ4M2I5YjY0MGQ0NGY3MGJmZWM3YTY3OGUwOGYwZWRjNjcwYmY2YWRiNzhlNTI4ZTY1NWM4OTYzZTlmNmU2ZWE1ZDI0OTNkM2I4In0.eyJhdWQiOiI5IiwianRpIjoiOTI1N2Q3NDgzYjliNjQwZDQ0ZjcwYmZlYzdhNjc4ZTA4ZjBlZGM2NzBiZjZhZGI3OGU1MjhlNjU1Yzg5NjNlOWY2ZTZlYTVkMjQ5M2QzYjgiLCJpYXQiOjE1OTQ3MTQxNjcsIm5iZiI6MTU5NDcxNDE2NywiZXhwIjoxNTk0NzIxMzY3LCJzdWIiOiI2Iiwic2NvcGVzIjpbXX0.fWd0Fkz_p4c8M9yfV2_VB_mhplW9-LAyc8hrH1sIPrk07Glm-C_70pjzTiwao4g9vGUhaKf_5OPy8P9QaSJs7MsKafGF_Ofo1X4GbQcDIJHDxx12UWXf8JTIGEhQVxL4h34o-cKavQbh7Dsbd0k3CdO-iLu0ON90rVOJ_RBCmETTjYvobcyheSCo_5pHIoeCLl7VvwGw_ZmjGBQYXutCn4l4O5HYRx-XCNw5xeyzgtkIFlmgendf_B08ptp3vP6G5IQ-7FrG4uXEJ3tmGtPhshNBdmUXjUu7g2kGUq7Q9JNLogoHxX0Brfruk8De3fdXl6xzE53iDLSZST23pG3h_mzO095uZY43UoJdFAFJtEZb_tjaGY7E8movxwJSbzd_Wz1lhFPKtmif1nRRmI4KL2IPl2UjdJhoIGEOt6C4neoswaBpdidUHwU8yQMdlxy0YfdfFothMEq5Pby5SHKF36MeJl8Bq9QXXNHVhE6Q-ggxZGvd3gwQS95KsbvLskfhnkbMML4dvusDpd2DQFlhWE0fg55q_w6P3tR8rS6jlAKK2XTpCgAxE57fFs2BW4Y-ei7evAbn2yRv0HznsUMaK5vUzgMgfWw_pLzIn31BGxq-_UeyAjAYt_eAYrI8FVfXTthjGT8x0X6LyjVGJSH2Qf0qArL1Rj7dSzYZcHO2edk",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"merchant_key\":\"$2y$10$w/ODdbTmfubcbUCUq/ia3OoJFMUmkM1UVNBiIQIuLfUlPmaLUT1he\",\r\n\t\"plan_code\" : \"15947034723dsSTK\",\r\n\t\"app_id\" : \"c3d81ae3cc3011ef10dcefa31a458d65\",\r\n\t\"app_secret\" : \"217071ea9f3f2e9b695d8f0039024e64\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://provisioning.sipay.com.tr/ccpayment/api/QueryRecurring",
+					"protocol": "https",
+					"host": [
+						"provisioning",
+						"sipay",
+						"com",
+						"tr"
+					],
+					"path": [
+						"ccpayment",
+						"api",
+						"QueryRecurring"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order Status Branded",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"merchant_key\":\"$2y$10$w/ODdbTmfubcbUCUq/ia3OoJFMUmkM1UVNBiIQIuLfUlPmaLUT1he\",\r\n\t\"invoice_id\" : \"96166\",\r\n\t\"is_direct_bank\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://provisioning.sipay.com.tr/ccpayment/purchase/status",
+					"protocol": "https",
+					"host": [
+						"provisioning",
+						"sipay",
+						"com",
+						"tr"
+					],
+					"path": [
+						"ccpayment",
+						"purchase",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recurring Plan Process",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImEzZTYwNzY3YzMwM2M4OTgwOGYyMzhkZDZiODEyMmZkZDBkYWQzOTk2YWQxZDM1MjI5NDVhYjNlZTlmMDkwZThmNWYzZTlkNzFiMWZjNTg3In0.eyJhdWQiOiI5IiwianRpIjoiYTNlNjA3NjdjMzAzYzg5ODA4ZjIzOGRkNmI4MTIyZmRkMGRhZDM5OTZhZDFkMzUyMjk0NWFiM2VlOWYwOTBlOGY1ZjNlOWQ3MWIxZmM1ODciLCJpYXQiOjE1OTk3NDUzNzgsIm5iZiI6MTU5OTc0NTM3OCwiZXhwIjoxNTk5NzUyNTc4LCJzdWIiOiI2Iiwic2NvcGVzIjpbXX0.jw4zUAVZH65V4qSIvqG1J5vk1tKFuaG7TjCVGEMtEvFrAWrhWIWcRgMWRb3FqcQvGguN0qEn1tEEEPuKukY11pOjejjvFXoboAWloC_R2PY6JSHCSnJMXXV9ys-7P_Gbldh4lMAs2ymEvJIfz_lS4Gv0oKVb6z0cPtnhhEHOp591b7tD30EtPZmCqSxoLSgtovd0xCK6WIgLmMimG5Wyb-YS9aXqzN5IipDX_x3Ut8Cem_IxAOX4VqEURBBTwFaUcaE5tdh1NO2SJ-TWQWuBcH-n_FtzKH8jzjwph2RmGSe6kWDwWSORwNBI7nNGvCbk_mcIlFOhQRDMVRXdVm-e1UtuTTLpbB_ZgjPM61jl-HiZBBl3xCJ6t3_Nwupu4NHsegNJBrSqeXc879sFi2tIrBQSwTeqPObhWDs9npm4ZSXzWjWV8M-FNnmpD5wlRgmEdfOewWALCG5n2QPmQpcpesUSD5WF7Y0-f7UEgwNDmUUEMJxh-6-BSgpYm9-KJcnbf_A7T2ZomerFixAJGSh1k0z0KDtnfr350AQ8BXnJu6Tvp9_zD0OR8k-K_pch9z1u0FoBqPq4pYb-hW4nGlwzIa_jB7nXdKVb45tH9oIZwfnJpzCRVIwn0DWYU1gi_nlsH1v2n3Q7bRg0c8tVdBf67JNOqcldRpMTObjCmg2X3XM",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"merchant_id\" : \"98950\",\r\n    \"plan_code\" : \"1594926463B42QuN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://provisioning.sipay.com.tr/ccpayment/api/recurring/plan/process",
+					"protocol": "https",
+					"host": [
+						"provisioning",
+						"sipay",
+						"com",
+						"tr"
+					],
+					"path": [
+						"ccpayment",
+						"api",
+						"recurring",
+						"plan",
+						"process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Commission API",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjRkOTJkYzI2M2Y3M2U5NjNhYmFjNTk1NDc2MjI0NjE0ZWE3YzZjZjg2ZDdhMDU4ODRlODU0YmY0ZDc5ZjAzZWUxMTBlMzJiNmZjOWI2ZTBjIn0.eyJhdWQiOiI5IiwianRpIjoiNGQ5MmRjMjYzZjczZTk2M2FiYWM1OTU0NzYyMjQ2MTRlYTdjNmNmODZkN2EwNTg4NGU4NTRiZjRkNzlmMDNlZTExMGUzMmI2ZmM5YjZlMGMiLCJpYXQiOjE2MDc0OTY3NTAsIm5iZiI6MTYwNzQ5Njc1MCwiZXhwIjoxNjA3NTAzOTQ3LCJzdWIiOiI2Iiwic2NvcGVzIjpbXX0.afETl0GU09OSvKaR_iS9gNMDm44kOxSa9IxQaW9ULBuARY5J4dibL8p8rWbftFe-47_oscTSLkY7jpi584sYbL6faNqPqGa7mDmrHvh3k-Mtuvg_NAtsg2Vrp0XlVMqgKE8kqVKPXncV8e02xflhAijE89qhRmHbKTqWKHHMC52ufK4zWJLkMRFYPsLSmoqMeiQmFoXmjQ16e0IbOCBOY5RL5o65eIuWaqhzh73OODdyYgbMp2yroBJhzBwzUcQWYHkkTszuzx1Ce4RGFevyndlH3rZkRFWBJUOKpiFd7TgL9zqeRcMFkte60ShG9K0rfFatLEH4g0PU0utmlIJuz6LdRlNYkVoxOcdOQyY-OURlIH-Ybb0dCR6tDgfuHT8oqykH-p6w3edD5jLhSuYO5y89ozOfEripE1VKCIqYO0pCkxcMeKUHNjbDjhNQ1Q_H_czi2X5AhLBhXRbUFywm0wKZUbHWjP9IyrG6q16BY8HbMIRVdzb8l2EAHHPLzHPaVFNoe2yt4zRTrEgoEEgWTzEcT-eCwXidTYHetf9syMSLoest55nReEZ6WnCRAuTTcU3u3xr6sopOHKTHHB2JsqO35rK5VQXJt7VRoTHFYlAfquLe7sdfG1jyHp5IGwj5HYumuYkfGNVuTXIua3ZjLB5lxY4zIkYMMczkQxxrkHc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"currency_code\": \"TRY\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://app.sipay.com.tr/ccpayment/api/commissions",
+					"protocol": "https",
+					"host": [
+						"app",
+						"sipay",
+						"com",
+						"tr"
+					],
+					"path": [
+						"ccpayment",
+						"api",
+						"commissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "paysmart2d",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImE1NjI4ODcxNWFjZmUxZTkwYzNiY2IyNzEyOGQ4ZDY4Y2Q2OGYxNGQ3OTM5ZmUwMjhkMGZjZjNkMDEwZTk4NjY3MTdkMjNiY2VmMmQ1ZDhlIn0.eyJhdWQiOiI5IiwianRpIjoiYTU2Mjg4NzE1YWNmZTFlOTBjM2JjYjI3MTI4ZDhkNjhjZDY4ZjE0ZDc5MzlmZTAyOGQwZmNmM2QwMTBlOTg2NjcxN2QyM2JjZWYyZDVkOGUiLCJpYXQiOjE2MDg3NDM0MzMsIm5iZiI6MTYwODc0MzQzMywiZXhwIjoxNjA4NzUwNjMzLCJzdWIiOiI2Iiwic2NvcGVzIjpbXX0.x04eDKj4_ga0TXJCnQ-751BFkSG14M1qRj2QyrzcGvpOlflMpDSJwlhLQOM_BNPN4duztThQZhbYQzwXn260CnbsPlxyPpzbXkAX8KqR-QsKe8hZxPNBpH_J_ydGx8NyDCAf0MHs3X07eEWuZVu6bDN7fYtu9LAxlgnyXs1Ud9G6PQtgDbVUuBPsgceTx-6jVaQVaEnnySzpEnPXigfABc5AtfVMT9YWvrB9G8tFkMaC5bLfuX1q36o16m4_DJmdKZcITot7CnuiBnzecaq2gGoR3L3UpNLwDCglaWU2DVoPBVgIsvjOSTJpevl1yFP4AWW85o17xDovrikDczIrAgR-Lt8Bn3_RnadjJQOnMBAtZ-MIUlTskyNedCHNMtW_7bgA10mT2XNbv-RCScj5zq79fZyegJFpkYuS3e76TWc9xGKJM5WJNETils_Yzg1sBcDA14whmLYNTDJmjUD_Cq5XoAEe1LyhCcdaU7Fi41p1MrUaz9vESAcSsmotmTyNPoliD2xj83Y7e373IK8H07jX9VGPSfE7fOnkFIDG4DJz3_KagbLz2DPLaE25vHGY30JZy4uQUo3fHjAbbTD5lQDawGRvdGSG3jhS3SqNTN7bpLG2sd7rkzcdO94XOiRCod2mcFtRhZmymOfkQUhoH0qLm5VVJWjIOxtfor1mias",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\r\n\t\"cc_holder_name\":\"Aigerim\",\r\n\t\"cc_no\":\"535576595454545\",\r\n\t\"expiry_month\":\"02\",\r\n\t\"expiry_year\":\"2023\",\r\n\t\"cvv\":\"555\",\r\n\t\"currency_code\":\"TRY\", \r\n    \"installments_number\": 1,\r\n\t\"invoice_id\":\"5485cdlk554\",\r\n\t\"invoice_description\":\" INVOICE TEST DESCRIPTION\",\r\n\t\"total\":5.00,\r\n\t\"merchant_key\":\"$2y$10$w/ODdbTmfubcbUCUq/ia3OoJFMUmkM1UVNBiIQIuLfUlPmaLUT1he\",\r\n\t\"items\":[{\"name\":\"Item3\",\"price\":5.00,\"qnantity\":1,\"description\":\"item3 description\"}],\r\n\t\"name\" : \"John\",\r\n\t\"surname\" : \"Dao\",\r\n    \"hash_key\" : \"661ebbf2acc9d8bc:cb27:47tnM4SnmuVWRq9YMaHo2npFjXr7Nfe04poc__ri3g__R1NylhHZcj0Zu3Eul4K7tPmEV2kRxpiDUa8If4xgxAHyM6j+mJaLGL73FFFxoEEJcwhqr5GYOTbQbT7+G2TtnU\"\r\n}"
+				},
+				"url": {
+					"raw": "https://provisioning.sipay.com.tr/ccpayment/api/paySmart2D",
+					"protocol": "https",
+					"host": [
+						"provisioning",
+						"sipay",
+						"com",
+						"tr"
+					],
+					"path": [
+						"ccpayment",
+						"api",
+						"paySmart2D"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "paySmart3D",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "cc_holder_name",
+							"value": "Aigerim",
+							"type": "text"
+						},
+						{
+							"key": "cc_no",
+							"value": "535576595454545",
+							"type": "text"
+						},
+						{
+							"key": "expiry_month",
+							"value": "06",
+							"type": "text"
+						},
+						{
+							"key": "expiry_year",
+							"value": "2022",
+							"type": "text"
+						},
+						{
+							"key": "currency_code",
+							"value": "TRY",
+							"type": "text"
+						},
+						{
+							"key": "installments_number",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "invoice_id",
+							"value": "34546434353",
+							"type": "text"
+						},
+						{
+							"key": "invoice_description",
+							"value": "INVOICE TEST DESCRIPTION",
+							"type": "text"
+						},
+						{
+							"key": "total",
+							"value": "5.00",
+							"type": "text"
+						},
+						{
+							"key": "merchant_key",
+							"value": "$2y$10$w/ODdbTmfubcbUCUq/ia3OoJFMUmkM1UVNBiIQIuLfUlPmaLUT1he",
+							"type": "text"
+						},
+						{
+							"key": "items",
+							"value": "[{\"name\":\"Item3\",\"price\":5.00,\"qnantity\":1,\"description\":\"item3 description\"}]",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "John",
+							"type": "text"
+						},
+						{
+							"key": "surname",
+							"value": "Dao",
+							"type": "text"
+						},
+						{
+							"key": "hash_key",
+							"value": "661ebbf2acc9d8bc:cb27:47tnM4SnmuVWRq9YMaHo2npFjXr7Nfe04poc__ri3g__R1NylhHZcj0Zu3Eul4K7tPmEV2kRxpiDUa8If4xgxAHyM6j+mJaLGL73FFFxoEEJcwhqr5GYOTbQbT7+G2TtnU",
+							"description": "We provided hash_key generation algorithm in documentation.",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://provisioning.sipay.com.tr/ccpayment/api/paySmart2D",
+					"protocol": "https",
+					"host": [
+						"provisioning",
+						"sipay",
+						"com",
+						"tr"
+					],
+					"path": [
+						"ccpayment",
+						"api",
+						"paySmart2D"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
